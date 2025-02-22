@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    body {
+        @apply bg-black bg-opacity-95;
+        scroll-behavior: smooth;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .nav-bar {
+        @apply sticky top-0 left-0 w-full h-[58px] px-10 py-1.5 flex text-white items-center z-20
+        justify-between ;
+        backdrop-filter: blur(10);
+
+        .logo {
+            @apply text-3xl font-extrabold select-none text-indigo-700 ; 
+        }
+
+        .links {
+            @apply w-[400px] flex justify-around select-none [@media(max-width:600px)]:hidden;// border-2 border-gray-700
+
+            a {
+                @apply cursor-pointer hover:text-indigo-700 border-b-[3px] border-b-transparent;
+
+                &.active {
+                    @apply pb-1 border-b-[3px] text-indigo-700 border-b-indigo-700 rounded-sm;
+                }
+            }
+        }
+
+        .btn-menu {
+            @apply [@media(min-width:600px)]:hidden *:active:text-indigo-700;
+        }
+
+        .menu-links {
+            @apply absolute top-[58px] left-0 opacity-65 w-full h-screen
+            overflow-x-hidden [@media(min-width:600px)]:hidden;
+
+            .box-links {
+                @apply absolute top-5 bg-white w-[200px] h-fit flex flex-col
+                    rounded-md text-black;
+                animation: anim-right-move 0.5s ease-out forwards;
+
+                a {
+                    @apply cursor-pointer select-none text-center border-b-[1px] border-gray-400;
+
+                    &.active {
+                        @apply bg-indigo-700 text-white;
+
+                    }
+                    &:first-child {
+                        @apply rounded-t-md;
+                    }
+
+                    &:last-child {
+                        @apply border-none;
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes anim-right-move {
+        0% {
+            @apply right-[-100%];
+        }
+
+        100% {
+            @apply right-8;
+        }
+    }
+
+}

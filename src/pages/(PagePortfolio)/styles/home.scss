@@ -1,0 +1,186 @@
+@tailwind components;
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    @apply bg-transparent;
+   border-radius: 30vh; 
+} 
+
+body::-webkit-scrollbar-thumb{
+@apply border-[3px] border-neutral-300 bg-indigo-700;
+/* background: #e0cbcb; */
+border-radius: 30vh;
+}
+
+body::-webkit-scrollbar-thumb:hover{
+    @apply bg-indigo-800/90;
+}
+// ##### box-service
+
+.box-service::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    margin-left: 5px;
+}
+
+.box-service::-webkit-scrollbar-track {
+    @apply bg-transparent;
+   border-radius: 30vh; 
+} 
+
+.box-service::-webkit-scrollbar-thumb{
+@apply border-[3px] border-neutral-300 bg-gray-500;
+/* background: #e0cbcb; */
+border-radius: 30vh;
+}
+
+.box-service:hover::-webkit-scrollbar-thumb{
+    @apply  bg-indigo-700;
+    /* background: #e0cbcb; */
+    }
+
+.box-service::-webkit-scrollbar-thumb:hover{
+    @apply bg-indigo-800/90;
+}
+
+@layer components {
+    .cover-landing {
+        @apply flex [@media(max-width:773px)]:flex-col-reverse;
+
+        .displaying { // h-[calc(100vh-58px)]
+            @apply w-[50vw] h-[calc(100vh-58px)] p-3 flex-1 gap-5 
+            flex flex-col justify-start items-center pt-20 [@media(max-width:773px)]:pt-0 [@media(max-width:773px)]:w-full
+            [@media(max-width:773px)]:h-[50vh] [@media(max-width:773px)]:flex-1
+            [@media(max-width:773px)]:absolute [@media(max-width:773px)]:top-[45vh]
+            [@media(max-width:773px)]:left-[50%] [@media(max-width:773px)]:translate-x-[-50%];
+
+            .social-links {
+                @apply select-none flex gap-2 *:rounded-[50%] *:border-2 *:border-indigo-700 *:p-2 *:text-indigo-700
+                ;
+
+                a {
+                    @apply hover:text-white hover:bg-indigo-700 active:bg-indigo-800 hover:scale-125 ;
+                }
+            }
+
+            .btn-down-resume {
+                @apply flex justify-center items-center rounded-[50px] border-2 border-indigo-700 
+                w-fit h-fit px-3 py-2 text-indigo-700  hover:text-white hover:bg-indigo-700 
+                active:bg-indigo-800 select-none;
+            }
+        }
+
+        // #container3D {
+        //     canvas {
+        //         @apply [@media(max-width:773px)]:w-[100vw];
+        //     }
+        // }
+
+        .type-effect {
+            @apply [@media(max-width:500px)]:text-[16px]
+        }
+    }
+
+    @media (max-width:773px) {
+        #container3D {
+            .canva-model {
+                width: 100% !important;
+                height: 50vh !important;
+                position: absolute;
+                top: -80px;
+
+            }
+        }
+    }
+
+}
+
+@layer components {
+    .back-icon-left {
+        @apply w-fit h-fit absolute left-[5vw] [@media(max-width:773px)]:hidden z-[-1] top-[30vh] text-black text-[350px];
+        animation: ani-left-icon 1s ease-in ;
+        animation-timeline: view(40% 60%);
+        animation-range: entry 0;
+    }
+    .back-icon-right {
+        @apply w-fit h-fit absolute right-[5vw] [@media(max-width:773px)]:hidden top-[-100px] text-black text-[350px] z-[-1];
+        animation: ani-right-icon 1s ease-in;
+        animation-timeline: view(40% 60%);
+        animation-range: entry 0;
+    }
+
+    @keyframes ani-left-icon {
+        0% {
+            @apply left-0 opacity-0;
+        }
+
+        100% {
+            @apply left-[5vw] opacity-100; 
+        }
+    } 
+
+    @keyframes ani-right-icon {
+        0% {
+            @apply right-0 opacity-0;
+        }
+
+        100% {
+            @apply right-[5vw] opacity-100; 
+        }
+    } 
+}
+
+@layer components {
+    .section-two {
+        
+        .content-about {
+
+            .btn-show-clone {
+                @apply w-fit rounded-[50px] bg-indigo-700 text-white select-none
+                hover:bg-transparent hover:text-indigo-700 border-2 border-transparent px-3 py-2 hover:border-indigo-700;
+            }
+        }
+    }
+
+    .box-service:hover {
+        animation: boxScal 0.2s linear forwards;
+    }
+
+    @keyframes boxScal {
+        0% {
+            transform: scale(1);
+        }
+
+        100% {
+            @apply border-indigo-600;
+            transform: scale(1.05);
+            
+        }
+    }
+}
+
+@layer components {
+    .section-four {
+
+        
+        .container-skills {
+            @apply grid [@media(min-width:630px)]:grid-cols-5 [@media(min-width:485px)]:grid-cols-4 [@media(max-width:485px)]:grid-cols-3 
+            gap-3 w-[90%] mx-auto justify-items-center py-3;
+            
+
+            .icon-tech {
+                @apply text-3xl; 
+            }
+        }
+    }
+}

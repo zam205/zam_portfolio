@@ -4,20 +4,50 @@
     "prod": "npm run build && npm run server:prod",
     "build": "vike build",
     "server:dev": "node ./server",
-    "server:prod": "cross-env NODE_ENV=production node ./server"
+    "server:prod": "cross-env NODE_ENV=production node ./server",
+    "start": "npm run server:prod"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@react-three/drei": "^9.121.1",
+    "@react-three/fiber": "^8.17.12",
+    "@reduxjs/toolkit": "^2.5.0",
+    "@splinetool/react-spline": "^4.0.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "axios": "^1.7.9",
     "compression": "^1.7.5",
     "cross-env": "^7.0.3",
+    "eslint": "^9.18.0",
+    "eslint-plugin-react": "^7.37.4",
     "express": "^4.21.2",
+    "framer-motion": "^11.18.0",
+    "gsap": "^3.12.7",
+    "maath": "^0.10.8",
     "node-fetch": "^3.3.2",
     "prop-types": "15.8.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-redux": "^9.2.0",
+    "react-responsive": "^10.0.0",
+    "react-scroll": "^1.9.0",
+    "react-tilt": "^1.0.2",
+    "react-typewriter-effect": "^1.1.0",
+    "react-vertical-timeline-component": "^3.5.3",
+    "redux": "^5.0.1",
+    "sass": "^1.83.4",
     "sirv": "^3.0.0",
-    "vike": "^0.4.215",
-    "vite": "^6.0.5"
+    "smooth-scroll": "^16.1.3",
+    "three": "^0.172.0",
+    "typewriter-effect": "^2.21.0",
+    "vike": "^0.4.220",
+    "vike-react": "^0.5.11",
+    "vite": "^6.1.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17"
+  }
 }

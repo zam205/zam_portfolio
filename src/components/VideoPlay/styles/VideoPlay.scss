@@ -1,0 +1,84 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+
+@layer components {
+
+    .temp-video {
+        @apply relative bg-black overflow-hidden;
+
+        .controls-video {
+            @apply absolute bottom-0 left-0 right-0 p-3 
+            bg-gradient-to-t from-neutral-800 bg-opacity-70 transition-opacity duration-300;
+
+            // .buffer-video {
+
+            //     &:hover span {
+            //         @apply inline;
+            //     }
+            // }
+            .custom-rang {
+                @apply w-full h-2 rounded-lg appearance-none cursor-pointer;
+                -webkit-appearance: none !important;
+                -moz-appearance: none !important;
+                appearance: none !important;
+                // outline: none;
+                // transition: background 0.3s;
+
+                &:hover + span {
+                    @apply inline;
+                }
+            }
+
+            input[type=range] {
+                -webkit-appearance: none;
+            }
+
+            // input[type=range]::-webkit-slider-runnable-track {
+            //     background: red;
+            // }
+
+            // input[type=range]:hover::-webkit-slider-runnable-track {
+            //     background: yellow;
+            // }
+
+            input[type=range]::-webkit-slider-thumb {
+                @apply w-[15px] h-[15px] rounded-[50%] bg-blue-400;
+                -webkit-appearance: none;
+                // background: green;
+                /* ...my custom edits... */
+            }
+
+            input[type=range]:hover::-webkit-slider-thumb {
+                @apply bg-blue-500
+                /* ...my custom edits... */
+            }
+
+            .controls-down {
+                @apply flex justify-between;
+            }
+
+
+        }
+
+        .loader {
+            @apply w-[48px] h-[48px] rounded-[50%] block border-t-[3px] border-r-[3px] border-t-gray-100 
+            border-r-transparent absolute top-[45%] left-[45%] translate-y-[-50%] translate-x-[-50%] ;
+            animation: rotation 1s linear infinite;
+            
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    }
+
+}
